@@ -1,6 +1,7 @@
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.LineNumberReader;
+import java.util.ArrayList;
 import java.util.List;
 
 public class FindBugsDemo3 {
@@ -28,11 +29,17 @@ public class FindBugsDemo3 {
 			String line;
 			while ((line = lnr.readLine()) != null) {
 				String dateInfo = getDateInfo(line);
+				if(this.dateList == null)
+				{
+					this.dateList = new ArrayList<String>();
+				}
 				dateList.add(dateInfo);
 			}
+			lnr.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		
 	}
 
 	/**
@@ -50,7 +57,7 @@ public class FindBugsDemo3 {
 		}
 
 		if (dateInfo != null) {
-			dateInfo.substring(1, dateInfo.length());
+			dateInfo = dateInfo.substring(0, dateInfo.length());
 		}
 		return dateInfo;
 	}
