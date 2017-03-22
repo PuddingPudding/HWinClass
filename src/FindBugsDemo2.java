@@ -5,7 +5,7 @@ public class FindBugsDemo2
 
 		String greeting = "Hello World";
 
-		greeting.replace("World", "SQA");
+		greeting = greeting.replace("World", "SQA");
 
 		System.out.println(greeting);
 
