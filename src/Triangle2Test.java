@@ -29,6 +29,34 @@ public class Triangle2Test
 		assertEquals("正三角形", t.checkTriangle(11, 11, 11));
 	}
 	
+	@Test
+	public void testCheckTriangle3()
+	{
+		assertEquals("等腰三角形", t.checkTriangle(7, 11, 11));
+	}
+	
+	@Test
+	public void testCheckTriangle4()
+	{
+		assertEquals("長度不可以是負的", t.checkTriangle(-11, 11, 11));
+	}
+	@Test
+	public void testCheckTriangle5()
+	{
+		assertEquals("長度不可以是負的", t.checkTriangle(11, -11, 11));
+	}
+	@Test
+	public void testCheckTriangle6()
+	{
+		assertEquals("長度不可以是負的", t.checkTriangle(11, 11, -11));
+	}
+	
+	@Test
+	public void testCheckTriangle7()
+	{
+		assertEquals("非三角形", t.checkTriangle(1, 2, 3));
+	}
+	
 	@After
 	public void runAfterAnyTest()
 	{
